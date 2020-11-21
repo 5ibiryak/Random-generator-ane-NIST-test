@@ -1,0 +1,8 @@
+#Частотный побитовый тест
+sum=0
+alpha=0.01
+for i in range (len(arr)): sum+=arr[i]*2-1
+p_value = math.erfc(abs(sum)/math.sqrt(2*len(arr)))
+print(p_value)
+if (p_value>alpha): print('Последовательность случайна')
+else: print('Последовательность НЕ случайна')
