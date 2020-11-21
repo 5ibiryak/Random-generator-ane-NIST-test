@@ -1,0 +1,13 @@
+#Тест на последовательность одинаковых битов
+sum = 0
+n=len(arr)
+for i in range (n): sum += arr[i]
+res = abs(sum/n-0.5)
+if (res>= 2/math.sqrt(n)): print ('Последовательность НЕ случайна')
+else:
+  dif=0
+  for j in range (n-1): 
+    if (arr[j]!=arr[j+1]): dif += 1
+  p_value = math.erfc((dif-(2*n*sum*(1-sum)))/(2*math.sqrt(2*n)*sum*(1-sum)))
+  if (p_value>alpha): print('Последовательность случайна')
+  else: print('Последовательность НЕ случайна')
